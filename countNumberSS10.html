@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count it's appearance</title>
+</head>
+<body>
+<script>
+    function display(arr) {
+        for(let i=0; i<arr.length; i++){
+            document.write(arr[i] + " ");
+            if(i%10 === 9){
+                document.write("<br>")
+            }
+        }
+    }
+
+    let arrInput = [];
+    for(let i=0; i<100; i++){
+        arrInput[i] = Math.floor(Math.random() * 101);
+    }
+
+    display(arrInput);
+
+    function countAppear(num) {
+        let count = 0;
+        for(let i=0; i<arrInput.length; i++){
+            if(arrInput[i] === num){
+                count++
+            }
+        }
+        return count;
+    }
+
+    let number = parseInt(prompt("Enter the number you want to find"));
+    document.write("<br>" + "the total it appear in this array is = " + countAppear(number));
+
+</script>
+</body>
+</html>
